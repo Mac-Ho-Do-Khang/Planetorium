@@ -1,0 +1,494 @@
+/* ---------------------------------
+----------- Below 1380px -----------
+------------------------------------ */
+@media (max-width: 88em) {
+  .plan {
+    padding: 4.8rem 3.2rem 9rem 3.2rem;
+  }
+
+  .pricing .features {
+    gap: 6.4rem;
+  }
+}
+
+/* ---------------------------------
+----------- Below 1344px -----------
+------------------------------------ */
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+  .heading {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-nav-list {
+    gap: 3.2rem;
+  }
+
+  .plan ul {
+    gap: 1.2rem;
+  }
+}
+
+/* ---------------------------------
+----------- Below 1280px -----------
+------------------------------------ */
+@media (max-width: 80em) {
+  .item:first-child {
+    margin-top: 0rem;
+  }
+  .plan-price {
+    font-size: 5rem;
+  }
+  footer .grid-container {
+    column-gap: 4rem;
+  }
+}
+
+/* ---------------------------------
+----------- Below 1200px -----------
+------------------------------------ */
+@media (max-width: 75em) {
+  html {
+    font-size: 56%;
+  }
+  .subheading {
+    font-size: 3.6rem;
+  }
+  .subsubheading {
+    font-size: 3rem;
+  }
+
+  .planets .grid-container {
+    column-gap: 5rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .testimonial-container {
+    padding: 9.6rem 8.4rem;
+  }
+  .testimonials-section {
+    grid-template-columns: 1fr;
+  }
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .testimonial-img {
+    width: 8.8rem;
+  }
+  .plan {
+    width: 80%;
+  }
+}
+
+/* ---------------------------------
+----------- Below 1120px -----------
+------------------------------------ */
+@media (max-width: 70em) {
+  .pricing .features {
+    gap: 4.8rem;
+  }
+  .plan {
+    width: 90%;
+  }
+
+  footer .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+  }
+  footer nav {
+    margin: 0 !important;
+    grid-row: 1;
+    grid-column: span 2;
+  }
+  footer div {
+    grid-column: span 3;
+  }
+}
+
+/* ---------------------------------
+----------- Below 1040px -----------
+------------------------------------ */
+@media (max-width: 65em) {
+  html {
+    font-size: 50%;
+  }
+  .categories {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .plan {
+    width: 85%;
+  }
+}
+
+/* ---------------------------------
+----------- Below 960px -----------
+------------------------------------ */
+@media (max-width: 60em) {
+  .subsubheading {
+    font-size: 2.6rem;
+  }
+
+  .header-nav-list a:link,
+  .header-nav-list a:visited {
+    font-size: 1.6rem;
+    margin-left: -1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    gap: 6.4rem;
+  }
+  .hero-text-box {
+    text-align: center;
+  }
+  .hero-img-box {
+    display: grid;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .delivered {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .logos img {
+    height: 2.4rem;
+  }
+  .planet-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+  .categories .list {
+    gap: 1.6rem;
+  }
+
+  .testimonial-img {
+    width: 6.4rem;
+  }
+
+  .pricing .grid-container {
+    column-gap: 8rem;
+  }
+  .plan {
+    width: 95%;
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+  .cta .btn {
+    margin-top: 2rem;
+    width: 50%;
+    justify-self: center;
+  }
+}
+
+/* ---------------------------------
+----------- Below *840*px -----------
+------------------------------------ */
+@media (max-width: 54em) {
+  html {
+    font-size: 40%;
+  }
+  .plan {
+    width: 80%;
+  }
+  .subheading {
+    margin-bottom: 6.4rem;
+  }
+  section {
+    padding: 12rem 9.6rem;
+  }
+  .cta-text {
+    margin-top: 6.4rem;
+  }
+
+  /* --------- MOBILE -----------*/
+  .mobile-btn {
+    display: block;
+    z-index: 3;
+  }
+  .header-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 50vh;
+    background-color: rgba(52, 58, 64, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 500ms ease-in;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: none;
+  }
+  .header-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+  .header-nav-list a:link,
+  .header-nav-list a:visited {
+    font-size: 3rem;
+  }
+  .header-nav-list .call-to-action {
+    display: inline-block;
+    padding: 1.6rem 3.2rem !important;
+    margin-top: 0.4rem !important;
+  }
+
+  .open .header-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .open .mobile-icon[name="close"] {
+    display: block;
+  }
+  .open .mobile-icon[name="menu"] {
+    display: none;
+  }
+  .hero-img-box {
+    width: 70%;
+  }
+}
+
+/* ---------------------------------
+----------- Below *798*px -----------
+------------------------------------ */
+@media (max-width: 51em) {
+  .plan {
+    width: 90%;
+  }
+  .hero-img-box {
+    width: 70%;
+  }
+}
+
+/* ---------------------------------
+----------- Below *706*px -----------
+------------------------------------ */
+@media (max-width: 46em) {
+  .planets .grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+  .categories {
+    grid-column: span 2;
+    justify-self: center;
+  }
+  .categories li {
+    margin-left: 5rem;
+  }
+
+  .pricing .features {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 9.6rem;
+    gap: 3.2rem;
+  }
+
+  .pricing .subheading,
+  .pricing .supheading {
+    padding-left: 0;
+    text-align: center;
+  }
+  .pricing .grid-container {
+    column-gap: 6rem;
+  }
+  .plan {
+    width: 90%;
+  }
+  .plan-2::after {
+    right: -10%;
+  }
+  .step-img-box img {
+    width: 45%;
+  }
+}
+
+/* ---------------------------------
+----------- Below *638*px -----------
+------------------------------------ */
+@media (max-width: 41em) {
+  .planner {
+    grid-template-columns: 1fr;
+    gap: 6.4rem;
+  }
+  .plan {
+    width: 38rem;
+    justify-self: center;
+    padding-bottom: 10rem;
+  }
+  .pricing .features {
+    padding: 0 7.8rem;
+    gap: 3.2rem;
+  }
+  .hero-img-box {
+    width: 80%;
+  }
+}
+
+/* ---------------------------------
+----------- Below *593*px -----------
+------------------------------------ */
+@media (max-width: 38em) {
+  section {
+    padding: 9.6rem 6.4rem;
+  }
+  .hero {
+    padding: 0 3.2rem;
+  }
+}
+
+/* ---------------------------------
+----------- Below *530*px -----------
+------------------------------------ */
+@media (max-width: 34em) {
+  .pricing .features {
+    padding: 4.8rem;
+    gap: 3.2rem;
+  }
+
+  .hero-img-box {
+    width: 90%;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(75deg, #1b1e22, #495057);
+  }
+  .cta-img {
+    grid-row: 1;
+    height: 35rem;
+    background-position: 50% 75%;
+  }
+  .cta-box {
+    padding: 1.2rem 4.8rem 6.4rem 4.8rem;
+  }
+  .cta-form .grid-container {
+    column-gap: 2.4rem;
+  }
+  .cta-box .subheading {
+    margin-top: 3.2rem;
+    margin-bottom: -2.4rem;
+  }
+  .plan:first-child {
+    transform: scale(0.9);
+  }
+  .plan:nth-child(2) {
+    transform: scale(0.9);
+    margin-top: -5rem;
+  }
+  .logos img {
+    height: 2rem;
+  }
+  .step-img-box img {
+    width: 55%;
+  }
+  .contacts {
+    margin-left: 8rem;
+  }
+  .logo-section {
+    transform: translateX(-5%);
+  }
+
+  .how-to .grid-container {
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+  }
+  .step-img-box {
+    width: 60%;
+    justify-self: center;
+    transform: translateY(15%);
+  }
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+  .plan:first-child {
+    transform: scale(0.8);
+    margin-top: -5rem;
+  }
+  .plan:nth-child(2) {
+    transform: scale(0.8);
+    margin-top: -15rem;
+  }
+}
+
+/* ---------------------------------
+----------- Below *400*px -----------
+------------------------------------ */
+@media (max-width: 25em) {
+  section {
+    padding: 6.4rem 4rem;
+  }
+
+  .hero .btn {
+    display: inline-block;
+    margin-bottom: 3rem;
+    width: 20rem;
+  }
+
+  .hero-img-box {
+    transform: scale(1.2);
+    margin-top: 5rem;
+  }
+
+  .pricing .features {
+    padding: 0;
+    gap: 3.2rem;
+  }
+
+  .testimonial-container {
+    padding: 6.4rem 4.4rem;
+  }
+  .cta-box {
+    padding: 0 4.8rem 6.4rem 4.8rem;
+  }
+
+  .contacts {
+    grid-column: 3/-1;
+  }
+  .logo-section {
+    grid-row: 3;
+    grid-column: 1/-1;
+  }
+  footer .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 4.8rem;
+  }
+
+  .planets .grid-container {
+    column-gap: 3.2rem;
+  }
+
+  .logos img {
+    height: 1.8rem;
+  }
+}
