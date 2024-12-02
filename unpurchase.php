@@ -16,13 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $check_sql = "SELECT quantity FROM $tb_name_selected_products WHERE user = '$userName' AND planet = '$planetName'";
         $result = mysqli_query($conn, $check_sql);
 
-        if (mysqli_num_rows($result) > 0) // Planet exists 
+        if (mysqli_fetch_assoc($result)['quantity'] > 1) // More than 1 planets in cart 
         {
-            $update_sql = "UPDATE $tb_name_selected_products SET quantity = quantity + 1 WHERE user = '$userName' AND planet = '$planetName'";
+            $update_sql = "UPDATE $tb_name_selected_products SET quantity = quantity - 1 WHERE user = '$userName' AND planet = '$planetName'";
             $query_success = mysqli_query($conn, $update_sql);
         } else // Planet does not exist
         {
-            $insert_sql = "INSERT INTO $tb_name_selected_products (user, planet, quantity) VALUES ('$userName', '$planetName', 1)";
+            $insert_sql = "delete from $tb_name_selected_products where planet = '$planetName'";
             $query_success = mysqli_query($conn, $insert_sql);
         }
     }
@@ -34,10 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($query_success) {
         echo '<status>success</status>';
-        echo "<message>{$planetName} added to cart!</message>";
+        echo "<message>{$planetName} removed from cart!</message>";
     } else {
         echo '<status>error</status>';
-        echo '<message>Error adding product: ' . mysqli_error($conn) . '</message>';
+        echo '<message>Error un-purchasing product: ' . mysqli_error($conn) . '</message>';
     }
 
     echo '</response>';

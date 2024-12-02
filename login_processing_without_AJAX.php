@@ -7,7 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email format.";
+        $_SESSION['login_message'] = "Invalid email format.";
+        header("Location: index.php?page=login");
         exit();
     }
 
@@ -23,12 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user'] = $email;
             $_SESSION['name'] = $name;
             setcookie('user_email', $email, time() + (86400 * 30), "/"); // 30 days expiration
-            echo "success";
+            header("Location: index.php?page=home");
+            exit();
         } else {
-            echo "Invalid login credentials.";
+            $_SESSION['login_message'] = "Invalid login credentials.";
+            header("Location: index.php?page=login");
+            exit();
         }
     } else {
-        echo "Email not found.";
+        $_SESSION['login_message'] = "Email not found.";
+        header("Location: index.php?page=login");
+        exit();
     }
 
     mysqli_close($conn);

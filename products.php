@@ -1,11 +1,13 @@
 <?php
 session_start();
-include("planets.php");
+include("database.php");
 $isLoggedIn = isset($_SESSION['user']);
+$current_user = isset($_SESSION['user']) ? $_SESSION['user'] : "guest";
 ?>
 <script>
     // Pass the login status to JavaScript
     const isLoggedIn = <?= json_encode($isLoggedIn) ?>;
+    const current_user = <?= json_encode($current_user) ?>;
 </script>
 
 <!DOCTYPE html>
@@ -28,12 +30,14 @@ $isLoggedIn = isset($_SESSION['user']);
         defer
         src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
     <script defer src="javascript/script_products.js"></script>
+    <script defer src="javascript/autocomplete_products.js"></script>
     <script
         type="module"
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script
         nomodule
         src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <title>Plenetorium - Products</title>
 </head>
 
@@ -46,12 +50,13 @@ $isLoggedIn = isset($_SESSION['user']);
                 <div class="dropdown">
                     <li><a class="header-nav-link" href="index.php?page=products">Products &#9660;</a></li>
                     <div class="dropdown-content">
-                        <a href="#">Earth-like</a>
-                        <a href="#">Watery</a>
-                        <a href="#">Ring</a>
+                        <a href="#" class="dropdown-content-category">Earth-like</a>
+                        <a href="#" class="dropdown-content-category">Watery</a>
+                        <a href="#" class="dropdown-content-category">Ring</a>
+                        <a href="#" class="dropdown-content-category">Moon</a>
                     </div>
                 </div>
-
+                <li><a class="header-nav-link" href="index.php?page=contacts">Contacts</a></li>
                 <!-- Show cart and profile icon if logged in -->
                 <?php if (isset($_SESSION['user'])): ?>
                     <div class="shoping-list">
@@ -93,9 +98,18 @@ $isLoggedIn = isset($_SESSION['user']);
         </button>
     </header>
 
+    <section class="search-container container">
+        <form class="search-form" autocomplete="off" method="GET">
+            <div class="autocomplete">
+                <input id="myInput" type="text" name="searcha_planet" class="search-bar" placeholder="Search for products...">
+            </div>
+            <button type="button" class="search-icon-container"><ion-icon name="search-circle-outline" class="search-icon"></ion-icon></button>
+        </form>
+    </section>
+
     <section class="planets tabcontent" id="products">
         <div
-            class="container grid-container"
+            class="planet-container container grid-container"
             style="
             --column: 4;
             --r-gap: 9.6rem;
@@ -220,39 +234,20 @@ $isLoggedIn = isset($_SESSION['user']);
                 </div>
             </div> -->
 
-            <?php foreach ($planets as $planet): ?>
-                <div class="planet">
-                    <div class="planet-img">
-                        <img src="<?= $planet['image'] ?>" />
-                        <div class="overlay">
-                            <ion-icon name="cart" class="cart-icon"
-                                data-image="<?= $planet['image'] ?>"
-                                data-planetname="<?= $planet['name'] ?>"></ion-icon>
-                        </div>
-                    </div>
-                    <div class="planet-content">
-                        <div class="tag-area">
-                            <?php foreach ($planet['tags'] as $tag): ?>
-                                <span class="tag <?= $tag ?>"><?= $tag ?></span>
-                            <?php endforeach; ?>
-                        </div>
+            <!-- saved.txt-->
 
-                        <p class="name"><?= $planet['name'] ?></p>
-                        <ul class="planet-attributes">
-                            <?php foreach ($planet['attributes'] as $attribute): ?>
-                                <li>
-                                    <ion-icon name="<?= $attribute['icon'] ?>"></ion-icon>
-                                    <span><?= $attribute['text'] ?>
-                                        <?php if (isset($attribute['value'])): ?>
-                                            <strong><?= $attribute['value'] ?></strong>
-                                        <?php endif; ?>
-                                    </span>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
+
+            <!-- This is where the all the planets will be dynamically loaded -->
+            <img src="https://example.com/planet1.jpg" class="planet-thumbnail">
+            <div class="planet-thumbnail-name">
+                Planet 1
+                <div class="planet-thumbnail-details">
+                    <ion-icon name="caret-back" class="planet-thumbnail-decrease"></ion-icon>
+                    <span class="planet-thumbnail-quantity"></span>
+                    <ion-icon name="caret-forward" class="planet-thumbnail-increase"></ion-icon>
                 </div>
-            <?php endforeach; ?>
+            </div>
+
 
         </div>
     </section>

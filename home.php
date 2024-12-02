@@ -37,11 +37,12 @@ session_start();
         <div class="dropdown">
           <li><a class="header-nav-link" href="index.php?page=products">Products &#9660;</a></li>
           <div class="dropdown-content">
-            <a href="#">Earth-like</a>
-            <a href="#">Watery</a>
-            <a href="#">Ring</a>
+            <a href="index.php?page=products">Earth-like</a>
+            <a href="index.php?page=products">Watery</a>
+            <a href="index.php?page=products">Ring</a>
           </div>
         </div>
+        <li><a class="header-nav-link" href="index.php?page=contacts">Contacts</a></li>
 
         <!-- Check if user is logged in -->
         <?php if (isset($_SESSION['user'])): ?>
@@ -91,7 +92,8 @@ session_start();
             planets perfectly suited to your needs. Tailored to your personal
             preferences and budget.
           </p>
-          <a href="#cta" class="btn btn-full">Start now</a>
+          <a href=<?php if (!isset($_SESSION['user'])) echo "index.php?page=register";
+                  else echo "index.php?page=products" ?> class="btn btn-full">Start now</a>
           <a href="#how" class="btn btn-outline">Learn more &rarr;</a>
           <div class="delivered">
             <div class="delivered-img">
@@ -234,7 +236,7 @@ session_start();
           </div>
           <div class="planet-content">
             <div class="tag-area">
-              <span class="tag earthy">Earth-like</span>
+              <span class="tag earth-like">Earth-like</span>
             </div>
 
             <p class="name">Terra Nova</p>

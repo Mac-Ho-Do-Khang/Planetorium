@@ -39,6 +39,7 @@ session_start();
                         <a href="#">Ring</a>
                     </div>
                 </div>
+                <li><a class="header-nav-link" href="index.php?page=contacts">Contacts</a></li>
                 <li>
                     <a href="index.php?page=register" class="header-nav-link call-to-action">Sign up</a>
                 </li>
@@ -90,8 +91,10 @@ session_start();
                 <div class="tile"></div>
                 <!-- <div class="shadow"></div> -->
             </div>
-            <form action="login_processing.php" method="post">
 
+            <!--------------- Login processing without AJAX ------------------>
+            <!-------------- display messages handled by PHP ----------------->
+            <!-- <form action="login_processing_without_AJAX.php" method="post">
                 <div class="container login">
                     <label for="uname"><b>Username</b></label>
                     <input class="email" id="email"
@@ -108,12 +111,32 @@ session_start();
                         </label>
                         <div class="login-notify">
                             <?php
-                            if (isset($_SESSION['login_message'])) {
-                                echo $_SESSION['login_message'];
-                                unset($_SESSION['login_message']);  // Clear the message after displaying it
-                            }
+                            // if (isset($_SESSION['login_message'])) {
+                            //     echo $_SESSION['login_message'];
+                            //     unset($_SESSION['login_message']);  // Clear the message after displaying it
+                            // }
                             ?>
                         </div>
+                    </div>
+                </div>
+            </form> -->
+
+            <!------------------- Login processing with AJAX ------------------------>
+            <!-------------- display messages handled by JavaScript ----------------->
+            <form>
+                <div class="container login">
+                    <label for="uname"><b>Username</b></label>
+                    <input class="email" id="email" type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input class="password" id="password" type="password" placeholder="Enter Password" name="password" required>
+
+                    <button class="btn btn-outline login-btn" type="submit">Login</button>
+                    <div class="below-login-btn">
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                        <div class="login-notify"></div>
                     </div>
                 </div>
             </form>
@@ -121,6 +144,7 @@ session_start();
 
     </section>
 
+    <script src="javascript/login_processing.js"></script>
 </body>
 
 </html>

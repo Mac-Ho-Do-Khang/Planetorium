@@ -4,6 +4,9 @@ $db_user = "root";
 $db_password = "";
 $db_name = "planetorium";
 $tb_name = "users";
+$tb_name_attributes = "icons";
+$tb_name_product = "products";
+$tb_name_selected_products = "selected";
 $conn = "";
 
 try {

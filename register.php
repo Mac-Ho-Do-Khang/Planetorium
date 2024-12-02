@@ -34,6 +34,7 @@
                         <a href="#">Ring</a>
                     </div>
                 </div>
+                <li><a class="header-nav-link" href="index.php?page=contacts">Contacts</a></li>
                 <li>
                     <a class="header-nav-link call-to-action" href="index.php?page=login">Login</a>
                 </li>

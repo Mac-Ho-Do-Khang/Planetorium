@@ -817,7 +817,18 @@ strong {
 .call-to-action {
   padding-top: 7rem;
 }
-
+.cta-form .btn {
+  grid-column: 1/-1;
+  width: 30%;
+  margin-bottom: 2rem;
+}
+.seperator {
+  display: flex;
+  justify-content: center;
+  grid-column: 1/-1;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
 .cta {
   grid-template-columns: 2fr 1fr;
   overflow: hidden;
@@ -839,8 +850,12 @@ strong {
 }
 
 .cta-img {
-  background-image: linear-gradient(135deg, rgba(33, 37, 41, 0.3), rgba(73, 80, 87, 0.3)),
-    url("../content/img/cta3.png");
+  background-image: linear-gradient(
+      135deg,
+      rgba(25, 26, 27, 0.3),
+      rgba(25, 28, 30, 0.3)
+    ),
+    url("location-form-image.png");
   background-size: cover;
   background-position: center;
 }
@@ -885,10 +900,9 @@ strong {
 .login button {
   align-self: end;
   justify-self: center;
-  grid-column: 1/-1;
   padding: 1.2rem;
   margin-top: 2rem;
-  width: 30%;
+  width: 80%;
   border-radius: 1rem;
 }
 .cta-form button:hover,
@@ -994,3 +1008,5 @@ footer nav:nth-child(4) {
   color: #868e96;
   font-style: none;
 }
+
+/* ---------------------------Products------------------------------- */

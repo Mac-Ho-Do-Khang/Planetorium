@@ -52,11 +52,12 @@
   opacity: 0;
   transition: 0.4s;
   background-color: rgba(25, 25, 25, 0.5); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Blurs the content behind the overlay */
+  backdrop-filter: blur(5px); /* Blurs the content behind the overlay */
 }
 .planet-img:hover .overlay {
   opacity: 1;
 }
+
 .cart-icon {
   color: #c5f6fa;
   font-size: 100px;
@@ -76,6 +77,70 @@
   color: #38d9a9;
 }
 
+/* -------------------- Search bar -------------------- */
+.search-container {
+  padding: 3rem 0 0 0;
+  display: grid;
+  justify-items: end;
+}
+.search-form {
+  display: flex;
+  gap: 1rem;
+}
+.search-bar {
+  justify-self: flex-end;
+}
+.search-icon-container {
+  border: none;
+  background-color: inherit;
+}
+.search-icon {
+  color: #3bc9db;
+  height: 4.5rem;
+  width: 4.5rem;
+}
+.search-icon:hover {
+  color: #c5f6fa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.search-icon:active {
+  color: #38d9a9;
+}
+
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+}
+.autocomplete-items {
+  position: absolute;
+  z-index: 99;
+  backdrop-filter: blur(8px);
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #2a2e32;
+  font-size: 1.6rem;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #2a2e32;
+  backdrop-filter: blur(8px);
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #2a2e32;
+}
+.matching_initial {
+  font-weight: bold;
+  color: #3bc9db;
+}
 /* -------------------- Shoping list -------------------- */
 .shoping-list-cart {
   height: 4rem;
@@ -100,7 +165,7 @@
   box-shadow: 0px 3px 3px 1px rgba(255, 255, 255, 0.05);
   z-index: 1;
   min-width: 20rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   border-radius: 1rem;
 }
 .shoping-list:hover .shoping-items {
@@ -122,16 +187,28 @@
   align-items: center;
   justify-self: center;
 }
-.planet-thumbnail-remove {
-  display: block;
+.planet-thumbnail-details {
+  display: flex;
+  gap: 0.5rem;
   margin: 1rem auto;
-  height: 2rem;
-  width: 2rem;
-  transition: 200ms;
+  justify-content: center;
 }
-.planet-thumbnail-remove:hover {
+.planet-thumbnail-increase,
+.planet-thumbnail-decrease {
+  transition: 200ms;
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.planet-thumbnail-increase:hover,
+.planet-thumbnail-decrease:hover {
   cursor: pointer;
   color: #c5f6fa;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+.planet-thumbnail-quantity {
+  display: flex;
+  align-items: center;
 }
 
 /* Go from zero to full opacity */

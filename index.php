@@ -14,6 +14,10 @@ switch ($page) {
         include './products.php';
         break;
 
+    case 'contacts':
+        include './location.php';
+        break;
+
     case 'user':
         include './homeuser.php';
         break;
