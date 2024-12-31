@@ -33,11 +33,8 @@ The website was initially built locally using **XAMPP** and later deployed to [I
 Visit the live website: [Planetorium on InfinityFree](http://dokhang.ct.ws/)  
 
 ## Screenshots 📸  
-
-_Add some screenshots here to showcase your website's features and design._  
+ 
 
 ---  
 
-Feel free to explore, fork, and contribute! 🌟 
-
-3. Include screenshots of your website in the `Screenshots` section by placing them in a folder (e.g., `assets/`) and referencing them in the README.
+Feel free to explore, fork, and contribute! 🌟
