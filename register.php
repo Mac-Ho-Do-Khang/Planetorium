@@ -132,10 +132,10 @@
                                                                     default:
                                                                         $hearfrom = '';
                                                                 }
-
+                                                                $password_hashed = password_hash($password, PASSWORD_BCRYPT);
                                                                 // Inserting data into the database
                                                                 $sql = "INSERT INTO $tb_name (fullname, email, pw, hearfrom, registerdate) 
-                                VALUES ('$fullname', '$email', '$password','$hearfrom', NOW())";
+                                VALUES ('$fullname', '$email', '$password_hashed','$hearfrom', NOW())";
                                                                 $success = TRUE;
                                                                 try {
                                                                     mysqli_query($conn, $sql);

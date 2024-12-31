@@ -25,7 +25,7 @@ session_start();
     defer
     src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
   <script defer src="script.js"></script>
-  <title>Plenetorium</title>
+  <title>Planetorium - Interstellar Travel</title>
 </head>
 
 <body>
